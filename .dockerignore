@@ -1,0 +1,11 @@
+.git
+.env
+.env.*
+config/runtime.env
+.vendor-sdk
+.venv
+.local
+__pycache__
+.pytest_cache
+tests
+demo/*.mp4
