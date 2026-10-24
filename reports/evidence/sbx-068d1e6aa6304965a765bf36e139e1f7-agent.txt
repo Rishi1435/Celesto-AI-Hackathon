@@ -1,0 +1,125 @@
+import csv, json, decimal, sys
+from decimal import Decimal, InvalidOperation
+
+def is_valid_amount(val):
+    try:
+        d = Decimal(val)
+    except Exception:
+        return False
+    if not d.is_finite():
+        return False
+    if d.is_signed():
+        return False
+    # Check for fractional cents: amount must be integer cents (no fractional part)
+    if d.as_tuple().exponent < 0:
+        # e.g., 123.45 has exponent -2, meaning 2 decimal places
+        # We need exponent == 0 (integer) or exponent >= -2? Actually cents: 2 decimal places allowed.
+        # But we need integer cents, so amount must be integer number of rupees? Wait: amounts are INR decimal strings.
+        # The spec: "Amounts are INR decimal strings: reject non-finite, negative, or fractional-cent values."
+        # Means amount can have up to 2 decimal places (cents). So we need to ensure that if there are decimal places, they are exactly 2.
+        # So exponent must be -2 (i.e., two decimal places) or 0 (integer rupees).
+        # Also need to ensure that the fractional part is integer cents (i.e., no more than 2 decimal places).
+        # So exponent must be 0 or -2.
+        if d.as_tuple().exponent not in (0, -2):
+            return False
+        # Also ensure that the fractional part is integer (i.e., cents part is integer)
+        # Already satisfied by exponent -2.
+    return True
+
+def to_cents(val):
+    # Convert Decimal to integer cents (multiply by 100)
+    return int((Decimal(val) * 100).to_integral_value())
+
+# Load sales.csv
+sales = {}
+rejected_sales = 0
+duplicate_sales = 0
+with open('/workspace/sales.csv', newline='') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        order_id = row['order_id']
+        amount_str = row['amount']
+        if not order_id or not amount_str:
+            rejected_sales += 1
+            continue
+        if not is_valid_amount(amount_str):
+            rejected_sales += 1
+            continue
+        # First valid row per order_id wins
+        if order_id in sales:
+            duplicate_sales += 1
+            continue
+        sales[order_id] = to_cents(amount_str)
+
+# Load payments.csv
+payments = {}
+rejected_payments = 0
+duplicate_payments = 0
+unmatched_payments = []
+with open('/workspace/payments.csv', newline='') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        payment_id = row['payment_id']
+        order_id = row['order_id']
+        amount_str = row['amount']
+        if not payment_id or not order_id or not amount_str:
+            rejected_payments += 1
+            continue
+        if not is_valid_amount(amount_str):
+            rejected_payments += 1
+            continue
+        # First valid row per payment_id wins
+        if payment_id in payments:
+            duplicate_payments += 1
+            continue
+        payments[payment_id] = {'order_id': order_id, 'amount_cents': to_cents(amount_str)}
+
+# Build rows for reconciled.json
+rows = []
+for order_id, sales_cents in sorted(sales.items()):
+    paid_cents = 0
+    # Sum payments for this order_id
+    for p in payments.values():
+        if p['order_id'] == order_id:
+            paid_cents += p['amount_cents']
+    balance_cents = sales_cents - paid_cents
+    if paid_cents == 0:
+        status = 'unpaid'
+    elif 0 < paid_cents < sales_cents:
+        status = 'partial'
+    elif paid_cents == sales_cents:
+        status = 'paid'
+    else:
+        status = 'overpaid'
+    rows.append({
+        'order_id': order_id,
+        'sales_cents': sales_cents,
+        'paid_cents': paid_cents,
+        'balance_cents': balance_cents,
+        'status': status
+    })
+
+# Collect unmatched payments (valid payments whose order_id not in sales)
+unmatched = []
+for pid, data in payments.items():
+    if data['order_id'] not in sales:
+        unmatched.append({
+            'payment_id': pid,
+            'order_id': data['order_id'],
+            'amount_cents': data['amount_cents']
+        })
+# Sort by payment_id
+unmatched.sort(key=lambda x: x['payment_id'])
+
+output = {
+    'currency': 'INR',
+    'rows': rows,
+    'rejected_sales': rejected_sales,
+    'rejected_payments': rejected_payments,
+    'duplicate_sales': duplicate_sales,
+    'duplicate_payments': duplicate_payments,
+    'unmatched_payments': unmatched
+}
+
+with open('/workspace/reconciled.json', 'w') as f:
+    json.dump(output, f, indent=2)

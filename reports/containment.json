@@ -1,0 +1,15 @@
+{
+  "status": "measured",
+  "attack": "destructive_command",
+  "blocked": true,
+  "host_untouched": true,
+  "host_path_invisible": true,
+  "guest_destructive_action_completed": true,
+  "before_sha256": "e4f3a6cb49e53b3fc46c6b9453fcfd4c5d8d470ac5ef4d30f809c5fd2a3e9b28",
+  "after_sha256": "e4f3a6cb49e53b3fc46c6b9453fcfd4c5d8d470ac5ef4d30f809c5fd2a3e9b28",
+  "network_policy": "not claimed for cloud Python SDK 0.1.8",
+  "evidence_paths": [
+    "reports/evidence/sbx-f06de8641e8249a5b227570bdbd0521b.jsonl",
+    "logs/commands.jsonl"
+  ]
+}

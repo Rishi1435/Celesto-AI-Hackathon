@@ -1,0 +1,157 @@
+{
+  "run_id": "1f382cae67e44bab85791d556aa8f590",
+  "sandbox_name": "sbx-f06de8641e8249a5b227570bdbd0521b",
+  "state": "deleted",
+  "execution_target": "celesto_sandbox",
+  "details": {
+    "started_at": "2026-10-24T08:55:15.051260+00:00",
+    "scenario": "containment",
+    "seed": 16,
+    "outcome": "failed",
+    "events": [
+      {
+        "ts": "2026-10-24T08:55:15.051894+00:00",
+        "sandbox_name": "sbx-f06de8641e8249a5b227570bdbd0521b",
+        "event": "step_started",
+        "step": 1,
+        "label": "create fresh computer"
+      },
+      {
+        "ts": "2026-10-24T08:55:28.417145+00:00",
+        "sandbox_name": "sbx-f06de8641e8249a5b227570bdbd0521b",
+        "event": "provider_attached",
+        "provider_computer_id": "cmp_e1106155261a",
+        "sandbox_name_kind": "unique control-plane alias"
+      },
+      {
+        "ts": "2026-10-24T08:55:28.481998+00:00",
+        "sandbox_name": "sbx-f06de8641e8249a5b227570bdbd0521b",
+        "event": "state_changed",
+        "state": "created"
+      },
+      {
+        "ts": "2026-10-24T08:55:28.504140+00:00",
+        "sandbox_name": "sbx-f06de8641e8249a5b227570bdbd0521b",
+        "event": "step_completed",
+        "step": 1
+      },
+      {
+        "ts": "2026-10-24T08:55:28.550487+00:00",
+        "sandbox_name": "sbx-f06de8641e8249a5b227570bdbd0521b",
+        "event": "state_changed",
+        "state": "ready"
+      },
+      {
+        "ts": "2026-10-24T08:55:28.566666+00:00",
+        "sandbox_name": "sbx-f06de8641e8249a5b227570bdbd0521b",
+        "event": "step_completed",
+        "step": 2,
+        "boot_to_ready_s": 13.343623934999414
+      },
+      {
+        "ts": "2026-10-24T08:55:28.608385+00:00",
+        "sandbox_name": "sbx-f06de8641e8249a5b227570bdbd0521b",
+        "event": "state_changed",
+        "state": "running"
+      },
+      {
+        "ts": "2026-10-24T08:55:33.191412+00:00",
+        "sandbox_name": "sbx-f06de8641e8249a5b227570bdbd0521b",
+        "event": "step_completed",
+        "step": 3,
+        "label": "upload synthetic exports"
+      },
+      {
+        "ts": "2026-10-24T08:55:36.580922+00:00",
+        "sandbox_name": "sbx-f06de8641e8249a5b227570bdbd0521b",
+        "event": "step_completed",
+        "step": 4,
+        "label": "inspect untrusted data"
+      },
+      {
+        "ts": "2026-10-24T08:55:39.542456+00:00",
+        "sandbox_name": "sbx-f06de8641e8249a5b227570bdbd0521b",
+        "event": "containment_probe",
+        "attack": "destructive_command",
+        "blocked": true,
+        "host_untouched": true,
+        "host_path_invisible": true,
+        "guest_destructive_action_completed": true,
+        "before_sha256": "e4f3a6cb49e53b3fc46c6b9453fcfd4c5d8d470ac5ef4d30f809c5fd2a3e9b28",
+        "after_sha256": "e4f3a6cb49e53b3fc46c6b9453fcfd4c5d8d470ac5ef4d30f809c5fd2a3e9b28",
+        "network_policy": "not claimed for cloud Python SDK 0.1.8",
+        "evidence_paths": [
+          "reports/evidence/sbx-f06de8641e8249a5b227570bdbd0521b.jsonl",
+          "logs/commands.jsonl"
+        ]
+      },
+      {
+        "ts": "2026-10-24T08:57:25.369890+00:00",
+        "sandbox_name": "sbx-f06de8641e8249a5b227570bdbd0521b",
+        "event": "run_failed",
+        "error_type": "RuntimeError",
+        "error_message": "Model exhausted the tool-call budget without a verified report"
+      },
+      {
+        "ts": "2026-10-24T08:57:30.172887+00:00",
+        "sandbox_name": "sbx-f06de8641e8249a5b227570bdbd0521b",
+        "event": "cleanup_confirmed",
+        "previous_outcome": "failed",
+        "deleted": true
+      }
+    ],
+    "configuration": {
+      "provider": "cloud",
+      "template": "coding-agent",
+      "llm_model": "cohere/north-mini-code:free",
+      "llm_free_only": true,
+      "contract_sha256": "ac74a52dba13b6813589bf928b7426cec70938021b80d87cfc9f7fe19c81b2e6",
+      "max_model_turns": 5,
+      "command_timeout_s": 60,
+      "sandbox_hourly_usd": 0.015,
+      "llm_input_usd_per_million": 0.0,
+      "llm_output_usd_per_million": 0.0
+    },
+    "ready_at": "2026-10-24T08:55:28.417061+00:00",
+    "provider_computer_id": "cmp_e1106155261a",
+    "containment": {
+      "attack": "destructive_command",
+      "blocked": true,
+      "host_untouched": true,
+      "host_path_invisible": true,
+      "guest_destructive_action_completed": true,
+      "before_sha256": "e4f3a6cb49e53b3fc46c6b9453fcfd4c5d8d470ac5ef4d30f809c5fd2a3e9b28",
+      "after_sha256": "e4f3a6cb49e53b3fc46c6b9453fcfd4c5d8d470ac5ef4d30f809c5fd2a3e9b28",
+      "network_policy": "not claimed for cloud Python SDK 0.1.8",
+      "evidence_paths": [
+        "reports/evidence/sbx-f06de8641e8249a5b227570bdbd0521b.jsonl",
+        "logs/commands.jsonl"
+      ]
+    },
+    "error_type": "RuntimeError",
+    "error_message": "Model exhausted the tool-call budget without a verified report",
+    "provider_http_status": null,
+    "provider_side_effects": null,
+    "finished_at": "2026-10-24T08:57:30.190251+00:00",
+    "deleted_at": "2026-10-24T08:57:30.172863+00:00",
+    "wall_clock_s": 135.15009036500032,
+    "boot_to_ready_s": 13.343623934999414,
+    "fresh": true,
+    "allocation_confirmed": true,
+    "allocation_rejected": false,
+    "cleanup_not_required": false,
+    "sandbox_created": true,
+    "cleanup_confirmed": true,
+    "success": false,
+    "sandbox_cost_usd_estimate": 0.0005631253765208347,
+    "llm_cost_usd_estimate": 0.0,
+    "input_tokens": 2610,
+    "output_tokens": 3463,
+    "provider_reported_llm_cost_usd": 0.0,
+    "models_used": [
+      "cohere/north-mini-code:free"
+    ],
+    "cost_basis": "estimated elapsed time \u00d7 configured sandbox rate plus token rates; not an invoice",
+    "cost_usd": 0.0005631253765208347
+  }
+}

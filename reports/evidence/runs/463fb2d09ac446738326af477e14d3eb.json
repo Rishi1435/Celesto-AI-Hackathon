@@ -1,0 +1,66 @@
+{
+  "run_id": "463fb2d09ac446738326af477e14d3eb",
+  "sandbox_name": "sbx-9ff9e0ad87fb4689b31344a22335a1b8",
+  "state": "failed",
+  "execution_target": "celesto_sandbox",
+  "details": {
+    "started_at": "2026-10-24T06:55:40.667573+00:00",
+    "scenario": "normal",
+    "seed": 1,
+    "outcome": "failed",
+    "events": [
+      {
+        "ts": "2026-10-24T06:55:40.667682+00:00",
+        "sandbox_name": "sbx-9ff9e0ad87fb4689b31344a22335a1b8",
+        "event": "step_started",
+        "step": 1,
+        "label": "create fresh computer"
+      },
+      {
+        "ts": "2026-10-24T06:55:44.497192+00:00",
+        "sandbox_name": "sbx-9ff9e0ad87fb4689b31344a22335a1b8",
+        "event": "run_failed",
+        "error_type": "CloudAPIError",
+        "error_message": "Cloud API returned HTTP 402. Start the free trial or add prepaid credit in the cloud dashboard. Request ID: 607a040e873c42d9108a339648bb1923."
+      },
+      {
+        "ts": "2026-10-24T06:55:44.512302+00:00",
+        "sandbox_name": "sbx-9ff9e0ad87fb4689b31344a22335a1b8",
+        "event": "cleanup_failed",
+        "error_type": "RuntimeError"
+      }
+    ],
+    "configuration": {
+      "provider": "cloud",
+      "template": "coding-agent",
+      "llm_model": "cohere/north-mini-code:free",
+      "llm_free_only": true,
+      "max_model_turns": 5,
+      "command_timeout_s": 60,
+      "sandbox_hourly_usd": 0.015,
+      "llm_input_usd_per_million": 0.0,
+      "llm_output_usd_per_million": 0.0
+    },
+    "error_type": "CloudAPIError",
+    "error_message": "Cloud API returned HTTP 402. Start the free trial or add prepaid credit in the cloud dashboard. Request ID: 607a040e873c42d9108a339648bb1923.",
+    "cleanup_error": "RuntimeError",
+    "manual_cleanup_required": "sbx-9ff9e0ad87fb4689b31344a22335a1b8",
+    "finished_at": "2026-10-24T06:55:44.534936+00:00",
+    "deleted_at": null,
+    "wall_clock_s": 3.867358686999978,
+    "boot_to_ready_s": 0.0,
+    "fresh": false,
+    "allocation_confirmed": false,
+    "sandbox_created": true,
+    "cleanup_confirmed": false,
+    "success": false,
+    "sandbox_cost_usd_estimate": 1.6113994529166573e-05,
+    "llm_cost_usd_estimate": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "provider_reported_llm_cost_usd": null,
+    "models_used": [],
+    "cost_basis": "estimated elapsed time \u00d7 configured sandbox rate plus token rates; not an invoice",
+    "cost_usd": 1.6113994529166573e-05
+  }
+}

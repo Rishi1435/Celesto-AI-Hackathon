@@ -1,0 +1,79 @@
+{
+  "initial_phase": {
+    "contract_path": "reports/evidence/contract_v1.txt",
+    "contract_sha256": "76b5c6007acaa06062ea092ad13ec5ed3bf024bb636b309ff7265978e6a48ff9",
+    "run_ids": [
+      "13729f3f1df9420f9394db7ce2473b89",
+      "46643673c846456c8e12ce0fc572162f",
+      "7ea783aaa1324adfb8c0eca4b9075e1d",
+      "82920a75757e4927ae0ddf819cfec421",
+      "97b8688682a04880856e3ed58c6e9d12",
+      "af4d8f858a1b4102ba399148a13b87d4",
+      "cd07bd4835c442c699bb8310ba53c79e",
+      "cf13c38840ee420186ca66be92463679",
+      "e6f9f1a54d194e08bb6abffcb7f6c31e",
+      "f0c119f109bb4e43a42161d1c74ea7a6"
+    ]
+  },
+  "observed_failure": "Two failed programs treated fractional rupees as invalid instead of checking fractional cents. All failed rows are retained.",
+  "observed_phases": [
+    {
+      "model": "cohere/north-mini-code:free",
+      "contract_sha256": "legacy-v1",
+      "max_model_turns": 5,
+      "run_count": 10,
+      "verified_successes": 7,
+      "outcomes": {
+        "succeeded": 7,
+        "failed": 3
+      },
+      "run_ids": [
+        "13729f3f1df9420f9394db7ce2473b89",
+        "46643673c846456c8e12ce0fc572162f",
+        "7ea783aaa1324adfb8c0eca4b9075e1d",
+        "82920a75757e4927ae0ddf819cfec421",
+        "97b8688682a04880856e3ed58c6e9d12",
+        "af4d8f858a1b4102ba399148a13b87d4",
+        "cd07bd4835c442c699bb8310ba53c79e",
+        "cf13c38840ee420186ca66be92463679",
+        "e6f9f1a54d194e08bb6abffcb7f6c31e",
+        "f0c119f109bb4e43a42161d1c74ea7a6"
+      ]
+    },
+    {
+      "model": "nvidia/nemotron-3.5-super-vl:free",
+      "contract_sha256": "ac74a52dba13b6813589bf928b7426cec70938021b80d87cfc9f7fe19c81b2e6",
+      "max_model_turns": 2,
+      "run_count": 7,
+      "verified_successes": 0,
+      "outcomes": {
+        "failed": 7
+      },
+      "run_ids": [
+        "1d7897a1cafd4525899ef33fcfe2f480",
+        "262eec87dffb48f0b5746126ac48af36",
+        "54482bde43184fcd89431a2e74ee496a",
+        "638dd962964f4287b7ec297ac3d7d52c",
+        "758b49fbc5624f3cab2189df929935c2",
+        "8ea07c7464b5428b997773f8b0c3e958",
+        "f022fb4ab631413293cde7d04204cb87"
+      ]
+    },
+    {
+      "model": "cohere/north-mini-code:free",
+      "contract_sha256": "ac74a52dba13b6813589bf928b7426cec70938021b80d87cfc9f7fe19c81b2e6",
+      "max_model_turns": 5,
+      "run_count": 3,
+      "verified_successes": 0,
+      "outcomes": {
+        "failed": 2,
+        "interrupted": 1
+      },
+      "run_ids": [
+        "1f382cae67e44bab85791d556aa8f590",
+        "55f82f32269d49efa4b2cdd2e51bccff",
+        "a4080ea570a84a8bb38e247794bc41fc"
+      ]
+    }
+  ]
+}

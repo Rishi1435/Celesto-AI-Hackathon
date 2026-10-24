@@ -1,0 +1,134 @@
+import csv, json, decimal, sys
+from decimal import Decimal, InvalidOperation
+
+# Paths
+SALES_PATH = '/workspace/sales.csv'
+PAYMENTS_PATH = '/workspace/payments.csv'
+OUTPUT_PATH = '/workspace/reconciled.json'
+
+# Helper: parse amount to integer cents, reject non-finite, negative, fractional-cent
+
+def parse_amount(val):
+    try:
+        d = Decimal(val)
+    except Exception:
+        return None
+    if not d.is_finite():
+        return None
+    if d < 0:
+        return None
+    # Convert to cents (integer) - ensure no fractional cents
+    # Decimal places must be 0 or 2 (since INR paise are cents)
+    # If more than 2 decimal places, reject
+    if d.as_tuple().exponent < -2:
+        return None
+    # Round to 2 decimal places (should be exact)
+    cents = int((d * 100).to_integral_value())
+    return cents
+
+# Load sales
+sales_by_order = {}
+rejected_sales = 0
+duplicate_sales = 0
+valid_sales = []
+
+with open(SALES_PATH, newline='') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        order_id = row.get('order_id', '').strip()
+        amount_raw = row.get('amount', '').strip()
+        # Required fields
+        if not order_id or not amount_raw:
+            rejected_sales += 1
+            continue
+        cents = parse_amount(amount_raw)
+        if cents is None:
+            rejected_sales += 1
+            continue
+        # First valid row per order_id wins
+        if order_id in sales_by_order:
+            duplicate_sales += 1
+            continue
+        sales_by_order[order_id] = cents
+        valid_sales.append({'order_id': order_id, 'sales_cents': cents})
+
+# Load payments
+payments_by_payment = {}
+rejected_payments = 0
+duplicate_payments = 0
+valid_payments = []
+
+with open(PAYMENTS_PATH, newline='') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        payment_id = row.get('payment_id', '').strip()
+        amount_raw = row.get('amount', '').strip()
+        order_id = row.get('order_id', '').strip()
+        # Required fields: payment_id and amount
+        if not payment_id or not amount_raw:
+            rejected_payments += 1
+            continue
+        cents = parse_amount(amount_raw)
+        if cents is None:
+            rejected_payments += 1
+            continue
+        # First valid row per payment_id wins
+        if payment_id in payments_by_payment:
+            duplicate_payments += 1
+            continue
+        payments_by_payment[payment_id] = {'order_id': order_id, 'amount_cents': cents}
+        valid_payments.append({'payment_id': payment_id, 'order_id': order_id, 'amount_cents': cents})
+
+# Build unmatched_payments: valid payments where order_id not in sales_by_order
+unmatched_payments = []
+for p in valid_payments:
+    if p['order_id'] not in sales_by_order:
+        unmatched_payments.append({
+            'payment_id': p['payment_id'],
+            'order_id': p['order_id'],
+            'amount_cents': p['amount_cents']
+        })
+# Sort by payment_id
+unmatched_payments.sort(key=lambda x: x['payment_id'])
+
+# Reconcile each accepted sale (those in sales_by_order)
+rows = []
+for order_id, sales_cents in sorted(sales_by_order.items()):
+    paid_cents = 0
+    # Sum payments for this order_id
+    for p in valid_payments:
+        if p['order_id'] == order_id:
+            paid_cents += p['amount_cents']
+    balance_cents = sales_cents - paid_cents
+    if paid_cents == 0:
+        status = 'unpaid'
+    elif 0 < paid_cents < sales_cents:
+        status = 'partial'
+    elif paid_cents == sales_cents:
+        status = 'paid'
+    else:
+        status = 'overpaid'
+    rows.append({
+        'order_id': order_id,
+        'sales_cents': sales_cents,
+        'paid_cents': paid_cents,
+        'balance_cents': balance_cents,
+        'status': status
+    })
+
+# Build final output
+output = {
+    'currency': 'INR',
+    'rows': rows,
+    'rejected_sales': rejected_sales,
+    'rejected_payments': rejected_payments,
+    'duplicate_sales': duplicate_sales,
+    'duplicate_payments': duplicate_payments,
+    'unmatched_payments': unmatched_payments
+}
+
+# Write to file
+with open(OUTPUT_PATH, 'w') as f:
+    json.dump(output, f, indent=2)
+
+print('Reconciliation complete.')

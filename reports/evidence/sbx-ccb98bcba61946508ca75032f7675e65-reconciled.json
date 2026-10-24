@@ -1,0 +1,58 @@
+{
+  "currency": "INR",
+  "rows": [
+    {
+      "order_id": "ORD-001",
+      "sales_cents": 42545,
+      "paid_cents": 0,
+      "balance_cents": 42545,
+      "status": "unpaid"
+    },
+    {
+      "order_id": "ORD-002",
+      "sales_cents": 19872,
+      "paid_cents": 9936,
+      "balance_cents": 9936,
+      "status": "partial"
+    },
+    {
+      "order_id": "ORD-003",
+      "sales_cents": 51850,
+      "paid_cents": 51850,
+      "balance_cents": 0,
+      "status": "paid"
+    },
+    {
+      "order_id": "ORD-004",
+      "sales_cents": 85419,
+      "paid_cents": 85519,
+      "balance_cents": -100,
+      "status": "overpaid"
+    },
+    {
+      "order_id": "ORD-005",
+      "sales_cents": 6428,
+      "paid_cents": 6428,
+      "balance_cents": 0,
+      "status": "paid"
+    },
+    {
+      "order_id": "ORD-006",
+      "sales_cents": 9594,
+      "paid_cents": 3198,
+      "balance_cents": 6396,
+      "status": "partial"
+    }
+  ],
+  "rejected_sales": 3,
+  "rejected_payments": 1,
+  "duplicate_sales": 1,
+  "duplicate_payments": 1,
+  "unmatched_payments": [
+    {
+      "payment_id": "ORPHAN",
+      "order_id": "UNKNOWN",
+      "amount_cents": 125
+    }
+  ]
+}

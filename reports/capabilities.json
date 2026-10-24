@@ -1,0 +1,19 @@
+{
+  "status": "measured",
+  "capabilities": [
+    {
+      "id": "persistence",
+      "why": "The reconciliation program and a checksum checkpoint stay on the same Celesto disk across stop and resume. Recovery reuses verified work rather than replaying model-generated code or duplicating side effects.",
+      "evidence_path": "reports/evidence/sbx-b21e86b636ad4aaea28340ae5d043ddf.jsonl",
+      "implementation_path": "app/sandbox.py",
+      "observed": true
+    },
+    {
+      "id": "safety_hooks",
+      "why": "The execution adapter audits every requested command before the Celesto SDK sees it. A fail-closed pre-execution hook accepts only commands rendered by the structured tools and records blocked destructive shell requests.",
+      "evidence_path": "reports/evidence/sbx-f06de8641e8249a5b227570bdbd0521b.jsonl",
+      "implementation_path": "app/sandbox.py",
+      "observed": true
+    }
+  ]
+}

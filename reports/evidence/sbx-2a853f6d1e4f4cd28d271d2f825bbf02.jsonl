@@ -1,0 +1,12 @@
+{"ts": "2026-10-24T08:57:41.622801+00:00", "sandbox_name": "sbx-2a853f6d1e4f4cd28d271d2f825bbf02", "event": "step_started", "step": 1, "label": "create fresh computer"}
+{"ts": "2026-10-24T08:57:53.404611+00:00", "event": "command_result", "exit_code": 0, "stdout": "ready\n", "stderr": ""}
+{"ts": "2026-10-24T08:57:53.421681+00:00", "sandbox_name": "sbx-2a853f6d1e4f4cd28d271d2f825bbf02", "event": "provider_attached", "provider_computer_id": "cmp_7254a4d6505f", "sandbox_name_kind": "unique control-plane alias"}
+{"ts": "2026-10-24T08:57:53.462997+00:00", "sandbox_name": "sbx-2a853f6d1e4f4cd28d271d2f825bbf02", "event": "state_changed", "state": "created"}
+{"ts": "2026-10-24T08:57:53.477934+00:00", "sandbox_name": "sbx-2a853f6d1e4f4cd28d271d2f825bbf02", "event": "step_completed", "step": 1}
+{"ts": "2026-10-24T08:57:53.518229+00:00", "sandbox_name": "sbx-2a853f6d1e4f4cd28d271d2f825bbf02", "event": "state_changed", "state": "ready"}
+{"ts": "2026-10-24T08:57:53.534791+00:00", "sandbox_name": "sbx-2a853f6d1e4f4cd28d271d2f825bbf02", "event": "step_completed", "step": 2, "boot_to_ready_s": 11.786201017000167}
+{"ts": "2026-10-24T08:57:53.589050+00:00", "sandbox_name": "sbx-2a853f6d1e4f4cd28d271d2f825bbf02", "event": "state_changed", "state": "running"}
+{"ts": "2026-10-24T08:57:56.504450+00:00", "event": "command_result", "exit_code": 0, "stdout": "files written\n", "stderr": ""}
+{"ts": "2026-10-24T08:57:56.527618+00:00", "sandbox_name": "sbx-2a853f6d1e4f4cd28d271d2f825bbf02", "event": "step_completed", "step": 3, "label": "upload synthetic exports"}
+{"ts": "2026-10-24T08:57:56.559669+00:00", "sandbox_name": "sbx-2a853f6d1e4f4cd28d271d2f825bbf02", "event": "interrupted"}
+{"ts": "2026-10-24T08:57:59.856401+00:00", "sandbox_name": "sbx-2a853f6d1e4f4cd28d271d2f825bbf02", "event": "cleanup_confirmed", "previous_outcome": "interrupted", "deleted": true}

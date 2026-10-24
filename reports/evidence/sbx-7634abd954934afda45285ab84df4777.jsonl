@@ -1,0 +1,14 @@
+{"ts": "2026-10-24T09:08:04.126657+00:00", "sandbox_name": "sbx-7634abd954934afda45285ab84df4777", "event": "step_started", "step": 1, "label": "create fresh computer"}
+{"ts": "2026-10-24T09:08:16.407203+00:00", "event": "command_result", "exit_code": 0, "stdout": "ready\n", "stderr": ""}
+{"ts": "2026-10-24T09:08:16.423069+00:00", "sandbox_name": "sbx-7634abd954934afda45285ab84df4777", "event": "provider_attached", "provider_computer_id": "cmp_74b7f9de345c", "sandbox_name_kind": "unique control-plane alias"}
+{"ts": "2026-10-24T09:08:16.463445+00:00", "sandbox_name": "sbx-7634abd954934afda45285ab84df4777", "event": "state_changed", "state": "created"}
+{"ts": "2026-10-24T09:08:16.478627+00:00", "sandbox_name": "sbx-7634abd954934afda45285ab84df4777", "event": "step_completed", "step": 1}
+{"ts": "2026-10-24T09:08:16.520461+00:00", "sandbox_name": "sbx-7634abd954934afda45285ab84df4777", "event": "state_changed", "state": "ready"}
+{"ts": "2026-10-24T09:08:16.534661+00:00", "sandbox_name": "sbx-7634abd954934afda45285ab84df4777", "event": "step_completed", "step": 2, "boot_to_ready_s": 12.280885676000253}
+{"ts": "2026-10-24T09:08:16.581758+00:00", "sandbox_name": "sbx-7634abd954934afda45285ab84df4777", "event": "state_changed", "state": "running"}
+{"ts": "2026-10-24T09:08:19.470264+00:00", "event": "command_result", "exit_code": 0, "stdout": "files written\n", "stderr": ""}
+{"ts": "2026-10-24T09:08:19.485361+00:00", "sandbox_name": "sbx-7634abd954934afda45285ab84df4777", "event": "step_completed", "step": 3, "label": "upload synthetic exports"}
+{"ts": "2026-10-24T09:08:23.123346+00:00", "event": "command_result", "exit_code": 0, "stdout": "{\"sales.csv\": {\"columns\": [\"order_id\", \"amount\", \"notes\"], \"row_count\": 10}, \"payments.csv\": {\"columns\": [\"payment_id\", \"order_id\", \"amount\"], \"row_count\": 8}}\n", "stderr": ""}
+{"ts": "2026-10-24T09:08:23.145771+00:00", "sandbox_name": "sbx-7634abd954934afda45285ab84df4777", "event": "step_completed", "step": 4, "label": "inspect untrusted data"}
+{"ts": "2026-10-24T09:08:25.563263+00:00", "sandbox_name": "sbx-7634abd954934afda45285ab84df4777", "event": "run_failed", "error_type": "RuntimeError", "error_message": "Model exhausted the tool-call budget without a verified report"}
+{"ts": "2026-10-24T09:08:29.581249+00:00", "sandbox_name": "sbx-7634abd954934afda45285ab84df4777", "event": "cleanup_confirmed", "previous_outcome": "failed", "deleted": true}

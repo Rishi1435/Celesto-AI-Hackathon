@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-10-24T09:26:12.055256+00:00",
+  "status": "live_evaluation_complete",
+  "confirmed_fresh_runs": 20,
+  "verified_successes": 7,
+  "success_rate": 0.35,
+  "all_allocated_guests_deleted": true,
+  "retained_computers_at_final_check": 0,
+  "free_model_only": true,
+  "paid_model_fallback": false,
+  "default_model": "cohere/north-mini-code:free",
+  "demo_duration_s": 148.8,
+  "concurrency_result": "Five parallel creation attempts refused by hourly quota; actual peak retained computers was one.",
+  "limitations": [
+    "Experimental free-model reliability; no production-readiness claim",
+    "SDK guest-output rendering in demo, not a console UI screen recording",
+    "Runtime cost is estimated, not invoice-derived"
+  ]
+}

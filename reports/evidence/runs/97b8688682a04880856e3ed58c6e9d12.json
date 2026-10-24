@@ -1,0 +1,165 @@
+{
+  "run_id": "97b8688682a04880856e3ed58c6e9d12",
+  "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+  "state": "deleted",
+  "execution_target": "celesto_sandbox",
+  "details": {
+    "started_at": "2026-10-24T08:07:59.355658+00:00",
+    "scenario": "normal",
+    "seed": 7,
+    "outcome": "succeeded",
+    "events": [
+      {
+        "ts": "2026-10-24T08:07:59.355746+00:00",
+        "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+        "event": "step_started",
+        "step": 1,
+        "label": "create fresh computer"
+      },
+      {
+        "ts": "2026-10-24T08:08:12.365044+00:00",
+        "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+        "event": "provider_attached",
+        "provider_computer_id": "cmp_ae7488565e6d",
+        "sandbox_name_kind": "unique control-plane alias"
+      },
+      {
+        "ts": "2026-10-24T08:08:12.407009+00:00",
+        "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+        "event": "state_changed",
+        "state": "created"
+      },
+      {
+        "ts": "2026-10-24T08:08:12.422158+00:00",
+        "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+        "event": "step_completed",
+        "step": 1
+      },
+      {
+        "ts": "2026-10-24T08:08:12.464150+00:00",
+        "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+        "event": "state_changed",
+        "state": "ready"
+      },
+      {
+        "ts": "2026-10-24T08:08:12.485003+00:00",
+        "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+        "event": "step_completed",
+        "step": 2,
+        "boot_to_ready_s": 12.988087251999787
+      },
+      {
+        "ts": "2026-10-24T08:08:12.529744+00:00",
+        "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+        "event": "state_changed",
+        "state": "running"
+      },
+      {
+        "ts": "2026-10-24T08:08:16.054030+00:00",
+        "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+        "event": "step_completed",
+        "step": 3,
+        "label": "upload synthetic exports"
+      },
+      {
+        "ts": "2026-10-24T08:08:19.422736+00:00",
+        "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+        "event": "step_completed",
+        "step": 4,
+        "label": "inspect untrusted data"
+      },
+      {
+        "ts": "2026-10-24T08:08:48.130634+00:00",
+        "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+        "event": "step_completed",
+        "step": 5,
+        "label": "model program verified"
+      },
+      {
+        "ts": "2026-10-24T08:08:51.668192+00:00",
+        "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+        "event": "step_completed",
+        "step": 6,
+        "label": "checkpoint completed work"
+      },
+      {
+        "ts": "2026-10-24T08:08:54.934609+00:00",
+        "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+        "event": "step_completed",
+        "step": 7,
+        "label": "retry safe read-only export"
+      },
+      {
+        "ts": "2026-10-24T08:09:07.060462+00:00",
+        "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+        "event": "step_completed",
+        "step": 8,
+        "capability": "persistence",
+        "checkpoint_verified": true
+      },
+      {
+        "ts": "2026-10-24T08:09:07.081475+00:00",
+        "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+        "event": "step_completed",
+        "step": 9,
+        "label": "containment probe or ordinary review"
+      },
+      {
+        "ts": "2026-10-24T08:09:10.102546+00:00",
+        "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+        "event": "step_completed",
+        "step": 10,
+        "label": "independently verify exported proof"
+      },
+      {
+        "ts": "2026-10-24T08:09:10.140687+00:00",
+        "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+        "event": "state_changed",
+        "state": "succeeded"
+      },
+      {
+        "ts": "2026-10-24T08:09:14.615385+00:00",
+        "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+        "event": "cleanup_confirmed",
+        "previous_outcome": "succeeded",
+        "deleted": true
+      }
+    ],
+    "configuration": {
+      "provider": "cloud",
+      "template": "coding-agent",
+      "llm_model": "cohere/north-mini-code:free",
+      "llm_free_only": true,
+      "max_model_turns": 5,
+      "command_timeout_s": 60,
+      "sandbox_hourly_usd": 0.015,
+      "llm_input_usd_per_million": 0.0,
+      "llm_output_usd_per_million": 0.0
+    },
+    "ready_at": "2026-10-24T08:08:12.365014+00:00",
+    "provider_computer_id": "cmp_ae7488565e6d",
+    "report_path": "reports/evidence/sbx-ccb98bcba61946508ca75032f7675e65-reconciled.json",
+    "report_sha256": "aff4cb978d3e698a99f8b8e1d284968532e36e90d3bf4ddb98e1f5f857a6adb3",
+    "finished_at": "2026-10-24T08:09:14.633799+00:00",
+    "deleted_at": "2026-10-24T08:09:14.615363+00:00",
+    "wall_clock_s": 75.2865107080006,
+    "boot_to_ready_s": 12.988087251999787,
+    "fresh": true,
+    "allocation_confirmed": true,
+    "allocation_rejected": false,
+    "cleanup_not_required": false,
+    "sandbox_created": true,
+    "cleanup_confirmed": true,
+    "success": true,
+    "sandbox_cost_usd_estimate": 0.0003136937946166692,
+    "llm_cost_usd_estimate": 0.0,
+    "input_tokens": 817,
+    "output_tokens": 1085,
+    "provider_reported_llm_cost_usd": 0.0,
+    "models_used": [
+      "cohere/north-mini-code:free"
+    ],
+    "cost_basis": "estimated elapsed time \u00d7 configured sandbox rate plus token rates; not an invoice",
+    "cost_usd": 0.0003136937946166692
+  }
+}

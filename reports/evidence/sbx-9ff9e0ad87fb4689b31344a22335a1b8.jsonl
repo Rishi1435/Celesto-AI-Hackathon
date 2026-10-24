@@ -1,0 +1,3 @@
+{"ts": "2026-10-24T06:55:40.667682+00:00", "sandbox_name": "sbx-9ff9e0ad87fb4689b31344a22335a1b8", "event": "step_started", "step": 1, "label": "create fresh computer"}
+{"ts": "2026-10-24T06:55:44.497192+00:00", "sandbox_name": "sbx-9ff9e0ad87fb4689b31344a22335a1b8", "event": "run_failed", "error_type": "CloudAPIError", "error_message": "Cloud API returned HTTP 402. Start the free trial or add prepaid credit in the cloud dashboard. Request ID: 607a040e873c42d9108a339648bb1923."}
+{"ts": "2026-10-24T06:55:44.512302+00:00", "sandbox_name": "sbx-9ff9e0ad87fb4689b31344a22335a1b8", "event": "cleanup_failed", "error_type": "RuntimeError"}

@@ -1,0 +1,62 @@
+{
+  "started_at": "2026-10-24T07:57:35.768191+00:00",
+  "run_ids": [
+    "7ea783aaa1324adfb8c0eca4b9075e1d",
+    "cd07bd4835c442c699bb8310ba53c79e",
+    "af4d8f858a1b4102ba399148a13b87d4",
+    "13729f3f1df9420f9394db7ce2473b89",
+    "e6f9f1a54d194e08bb6abffcb7f6c31e",
+    "46643673c846456c8e12ce0fc572162f",
+    "97b8688682a04880856e3ed58c6e9d12",
+    "f0c119f109bb4e43a42161d1c74ea7a6",
+    "82920a75757e4927ae0ddf819cfec421",
+    "3a67356ca66c448993fb691d72d44ac2",
+    "0ddeb9cb1d874f91a57efa0321594f65",
+    "42207b8d472340e9be5b177d1dd770c7",
+    "b22647b46e9c494c84c1a93269112c63",
+    "6e40195baaa74f2c97e18bbbdc783a0e",
+    "cf13c38840ee420186ca66be92463679",
+    "1f382cae67e44bab85791d556aa8f590",
+    "398f253395d44d4e864cda7a52e9601c",
+    "55f82f32269d49efa4b2cdd2e51bccff",
+    "8c2793dc9b0e48858892ab39d373fb61",
+    "a4080ea570a84a8bb38e247794bc41fc",
+    "54482bde43184fcd89431a2e74ee496a",
+    "8ea07c7464b5428b997773f8b0c3e958",
+    "230a0301b23647c48655bfa8f97d69e8",
+    "1d7897a1cafd4525899ef33fcfe2f480",
+    "a439411933264b6ebc38b4d4b3487697",
+    "638dd962964f4287b7ec297ac3d7d52c",
+    "b5d311ded52a4cf8b8cfd97e47f57eb3",
+    "f022fb4ab631413293cde7d04204cb87",
+    "9d699f85bbbb4d08819010b667762663",
+    "758b49fbc5624f3cab2189df929935c2",
+    "72f1023f365c481e9075e1e5b3204f95",
+    "262eec87dffb48f0b5746126ac48af36"
+  ],
+  "worker_history": [
+    {
+      "ts": "2026-10-24T07:57:35.768191+00:00",
+      "workers": 1,
+      "note": "original serial dispatcher"
+    },
+    {
+      "ts": "2026-10-24T08:13:53.278521+00:00",
+      "workers": 5
+    },
+    {
+      "ts": "2026-10-24T08:37:34.625890+00:00",
+      "workers": 1
+    },
+    {
+      "ts": "2026-10-24T09:03:19.840684+00:00",
+      "workers": 1
+    }
+  ],
+  "cohort_policy": "All confirmed end-to-end reconciliation computers, including the initial smoke and all failures; cohort allocation refusals are preserved separately. No allocated failures are omitted.",
+  "target_fresh_count": 20,
+  "next_allocation_not_before": "2026-10-24T09:10:39.311845+00:00",
+  "last_dispatch_finished_at": "2026-10-24T09:11:10.173409+00:00",
+  "status": "measured",
+  "finished_at": "2026-10-24T09:11:10.173447+00:00"
+}

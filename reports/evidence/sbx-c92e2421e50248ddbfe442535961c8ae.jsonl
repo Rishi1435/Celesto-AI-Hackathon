@@ -1,0 +1,15 @@
+{"ts": "2026-10-24T08:04:36.845898+00:00", "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae", "event": "step_started", "step": 1, "label": "create fresh computer"}
+{"ts": "2026-10-24T08:04:48.717955+00:00", "event": "command_result", "exit_code": 0, "stdout": "ready\n", "stderr": ""}
+{"ts": "2026-10-24T08:04:48.744835+00:00", "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae", "event": "provider_attached", "provider_computer_id": "cmp_207aac3d2f67", "sandbox_name_kind": "unique control-plane alias"}
+{"ts": "2026-10-24T08:04:48.807044+00:00", "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae", "event": "state_changed", "state": "created"}
+{"ts": "2026-10-24T08:04:48.823119+00:00", "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae", "event": "step_completed", "step": 1}
+{"ts": "2026-10-24T08:04:48.865763+00:00", "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae", "event": "state_changed", "state": "ready"}
+{"ts": "2026-10-24T08:04:48.885288+00:00", "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae", "event": "step_completed", "step": 2, "boot_to_ready_s": 11.882082402000378}
+{"ts": "2026-10-24T08:04:48.928465+00:00", "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae", "event": "state_changed", "state": "running"}
+{"ts": "2026-10-24T08:04:51.933363+00:00", "event": "command_result", "exit_code": 0, "stdout": "files written\n", "stderr": ""}
+{"ts": "2026-10-24T08:04:51.947480+00:00", "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae", "event": "step_completed", "step": 3, "label": "upload synthetic exports"}
+{"ts": "2026-10-24T08:04:55.372456+00:00", "event": "command_result", "exit_code": 0, "stdout": "{\"sales.csv\": {\"columns\": [\"order_id\", \"amount\", \"notes\"], \"row_count\": 10}, \"payments.csv\": {\"columns\": [\"payment_id\", \"order_id\", \"amount\"], \"row_count\": 8}}\n", "stderr": ""}
+{"ts": "2026-10-24T08:04:55.386127+00:00", "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae", "event": "step_completed", "step": 4, "label": "inspect untrusted data"}
+{"ts": "2026-10-24T08:05:00.096388+00:00", "event": "command_result", "exit_code": 0, "stdout": "{\"sales.csv\": {\"columns\": [\"order_id\", \"amount\", \"notes\"], \"row_count\": 10}, \"payments.csv\": {\"columns\": [\"payment_id\", \"order_id\", \"amount\"], \"row_count\": 8}}\n", "stderr": ""}
+{"ts": "2026-10-24T08:05:35.788040+00:00", "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae", "event": "run_failed", "error_type": "HTTPStatusError", "error_message": "Client error '400 Bad Request' for url '[endpoint]\nFor more information check: [endpoint]"}
+{"ts": "2026-10-24T08:05:39.633416+00:00", "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae", "event": "cleanup_confirmed", "previous_outcome": "failed", "deleted": true}

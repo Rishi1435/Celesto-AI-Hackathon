@@ -1,0 +1,124 @@
+{
+  "run_id": "1d7897a1cafd4525899ef33fcfe2f480",
+  "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd",
+  "state": "deleted",
+  "execution_target": "celesto_sandbox",
+  "details": {
+    "started_at": "2026-10-24T09:04:39.471890+00:00",
+    "scenario": "normal",
+    "seed": 24,
+    "outcome": "failed",
+    "events": [
+      {
+        "ts": "2026-10-24T09:04:39.472069+00:00",
+        "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd",
+        "event": "step_started",
+        "step": 1,
+        "label": "create fresh computer"
+      },
+      {
+        "ts": "2026-10-24T09:04:53.344355+00:00",
+        "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd",
+        "event": "provider_attached",
+        "provider_computer_id": "cmp_a6eb3a284534",
+        "sandbox_name_kind": "unique control-plane alias"
+      },
+      {
+        "ts": "2026-10-24T09:04:53.387225+00:00",
+        "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd",
+        "event": "state_changed",
+        "state": "created"
+      },
+      {
+        "ts": "2026-10-24T09:04:53.405945+00:00",
+        "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd",
+        "event": "step_completed",
+        "step": 1
+      },
+      {
+        "ts": "2026-10-24T09:04:53.449197+00:00",
+        "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd",
+        "event": "state_changed",
+        "state": "ready"
+      },
+      {
+        "ts": "2026-10-24T09:04:53.466462+00:00",
+        "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd",
+        "event": "step_completed",
+        "step": 2,
+        "boot_to_ready_s": 13.859222160000172
+      },
+      {
+        "ts": "2026-10-24T09:04:53.507906+00:00",
+        "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd",
+        "event": "state_changed",
+        "state": "running"
+      },
+      {
+        "ts": "2026-10-24T09:04:58.398664+00:00",
+        "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd",
+        "event": "step_completed",
+        "step": 3,
+        "label": "upload synthetic exports"
+      },
+      {
+        "ts": "2026-10-24T09:05:03.907825+00:00",
+        "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd",
+        "event": "step_completed",
+        "step": 4,
+        "label": "inspect untrusted data"
+      },
+      {
+        "ts": "2026-10-24T09:05:04.258720+00:00",
+        "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd",
+        "event": "run_failed",
+        "error_type": "ModelProviderError",
+        "error_message": "Model provider HTTP 502: Provider returned error"
+      },
+      {
+        "ts": "2026-10-24T09:05:10.543378+00:00",
+        "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd",
+        "event": "cleanup_confirmed",
+        "previous_outcome": "failed",
+        "deleted": true
+      }
+    ],
+    "configuration": {
+      "provider": "cloud",
+      "template": "coding-agent",
+      "llm_model": "nvidia/nemotron-3.5-super-vl:free",
+      "llm_free_only": true,
+      "contract_sha256": "ac74a52dba13b6813589bf928b7426cec70938021b80d87cfc9f7fe19c81b2e6",
+      "max_model_turns": 2,
+      "command_timeout_s": 60,
+      "sandbox_hourly_usd": 0.015,
+      "llm_input_usd_per_million": 0.0,
+      "llm_output_usd_per_million": 0.0
+    },
+    "ready_at": "2026-10-24T09:04:53.344299+00:00",
+    "provider_computer_id": "cmp_a6eb3a284534",
+    "error_type": "ModelProviderError",
+    "error_message": "Model provider HTTP 502: Provider returned error",
+    "provider_http_status": 502,
+    "provider_side_effects": "none",
+    "finished_at": "2026-10-24T09:05:10.557987+00:00",
+    "deleted_at": "2026-10-24T09:05:10.543353+00:00",
+    "wall_clock_s": 31.088870362000307,
+    "boot_to_ready_s": 13.859222160000172,
+    "fresh": true,
+    "allocation_confirmed": true,
+    "allocation_rejected": false,
+    "cleanup_not_required": false,
+    "sandbox_created": true,
+    "cleanup_confirmed": true,
+    "success": false,
+    "sandbox_cost_usd_estimate": 0.00012953695984166793,
+    "llm_cost_usd_estimate": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "provider_reported_llm_cost_usd": null,
+    "models_used": [],
+    "cost_basis": "estimated elapsed time \u00d7 configured sandbox rate plus token rates; not an invoice",
+    "cost_usd": 0.00012953695984166793
+  }
+}

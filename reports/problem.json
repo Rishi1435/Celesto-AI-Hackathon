@@ -1,0 +1,6 @@
+{
+  "who": "Small shop operators who export sales and payment CSV files need to find unpaid, overpaid, and unmatched orders without trusting generated code on their business computer.",
+  "agent_work": "An LLM inspects two synthetic CSV exports in a Celesto computer, writes a Python reconciliation program, runs it, repairs errors from tool feedback, and produces a structured reconciliation report.",
+  "proof_output": "A reconciled JSON report containing exact integer-cent balances, duplicate and rejection counts, and unmatched payments, independently checked against a trusted oracle.",
+  "idea_source": "idea_bank"
+}

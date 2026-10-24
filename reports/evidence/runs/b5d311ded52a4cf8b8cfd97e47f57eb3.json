@@ -1,0 +1,70 @@
+{
+  "run_id": "b5d311ded52a4cf8b8cfd97e47f57eb3",
+  "sandbox_name": "sbx-bc0b7a3f2b90410e906cd774c88d490b",
+  "state": "failed",
+  "execution_target": "celesto_sandbox",
+  "details": {
+    "started_at": "2026-10-24T09:06:30.600392+00:00",
+    "scenario": "normal",
+    "seed": 27,
+    "outcome": "failed",
+    "events": [
+      {
+        "ts": "2026-10-24T09:06:30.600504+00:00",
+        "sandbox_name": "sbx-bc0b7a3f2b90410e906cd774c88d490b",
+        "event": "step_started",
+        "step": 1,
+        "label": "create fresh computer"
+      },
+      {
+        "ts": "2026-10-24T09:06:33.053193+00:00",
+        "sandbox_name": "sbx-bc0b7a3f2b90410e906cd774c88d490b",
+        "event": "run_failed",
+        "error_type": "CloudAPIError",
+        "error_message": "Cloud API returned HTTP 429. The server is limiting requests; inspect your cloud account limits before retrying, or ask Celesto support which limit applies. Request ID: d222ebac2078822e6d7ec12589546f37."
+      },
+      {
+        "ts": "2026-10-24T09:06:33.073787+00:00",
+        "sandbox_name": "sbx-bc0b7a3f2b90410e906cd774c88d490b",
+        "event": "no_allocation_to_delete",
+        "previous_outcome": "failed",
+        "deleted": false
+      }
+    ],
+    "configuration": {
+      "provider": "cloud",
+      "template": "coding-agent",
+      "llm_model": "nvidia/nemotron-3.5-super-vl:free",
+      "llm_free_only": true,
+      "contract_sha256": "ac74a52dba13b6813589bf928b7426cec70938021b80d87cfc9f7fe19c81b2e6",
+      "max_model_turns": 2,
+      "command_timeout_s": 60,
+      "sandbox_hourly_usd": 0.015,
+      "llm_input_usd_per_million": 0.0,
+      "llm_output_usd_per_million": 0.0
+    },
+    "error_type": "CloudAPIError",
+    "error_message": "Cloud API returned HTTP 429. The server is limiting requests; inspect your cloud account limits before retrying, or ask Celesto support which limit applies. Request ID: d222ebac2078822e6d7ec12589546f37.",
+    "provider_http_status": 429,
+    "provider_side_effects": "none",
+    "finished_at": "2026-10-24T09:06:33.098597+00:00",
+    "deleted_at": null,
+    "wall_clock_s": 2.4982031929994264,
+    "boot_to_ready_s": 0.0,
+    "fresh": false,
+    "allocation_confirmed": false,
+    "allocation_rejected": true,
+    "cleanup_not_required": true,
+    "sandbox_created": true,
+    "cleanup_confirmed": false,
+    "success": false,
+    "sandbox_cost_usd_estimate": 0,
+    "llm_cost_usd_estimate": 0.0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "provider_reported_llm_cost_usd": null,
+    "models_used": [],
+    "cost_basis": "estimated elapsed time \u00d7 configured sandbox rate plus token rates; not an invoice",
+    "cost_usd": 0.0
+  }
+}

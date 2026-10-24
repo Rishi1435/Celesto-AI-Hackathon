@@ -1,0 +1,14 @@
+{"ts": "2026-10-24T09:04:39.472069+00:00", "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd", "event": "step_started", "step": 1, "label": "create fresh computer"}
+{"ts": "2026-10-24T09:04:53.324832+00:00", "event": "command_result", "exit_code": 0, "stdout": "ready\n", "stderr": ""}
+{"ts": "2026-10-24T09:04:53.344355+00:00", "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd", "event": "provider_attached", "provider_computer_id": "cmp_a6eb3a284534", "sandbox_name_kind": "unique control-plane alias"}
+{"ts": "2026-10-24T09:04:53.387225+00:00", "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd", "event": "state_changed", "state": "created"}
+{"ts": "2026-10-24T09:04:53.405945+00:00", "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd", "event": "step_completed", "step": 1}
+{"ts": "2026-10-24T09:04:53.449197+00:00", "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd", "event": "state_changed", "state": "ready"}
+{"ts": "2026-10-24T09:04:53.466462+00:00", "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd", "event": "step_completed", "step": 2, "boot_to_ready_s": 13.859222160000172}
+{"ts": "2026-10-24T09:04:53.507906+00:00", "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd", "event": "state_changed", "state": "running"}
+{"ts": "2026-10-24T09:04:58.384567+00:00", "event": "command_result", "exit_code": 0, "stdout": "files written\n", "stderr": ""}
+{"ts": "2026-10-24T09:04:58.398664+00:00", "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd", "event": "step_completed", "step": 3, "label": "upload synthetic exports"}
+{"ts": "2026-10-24T09:05:03.884856+00:00", "event": "command_result", "exit_code": 0, "stdout": "{\"sales.csv\": {\"columns\": [\"order_id\", \"amount\", \"notes\"], \"row_count\": 10}, \"payments.csv\": {\"columns\": [\"payment_id\", \"order_id\", \"amount\"], \"row_count\": 8}}\n", "stderr": ""}
+{"ts": "2026-10-24T09:05:03.907825+00:00", "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd", "event": "step_completed", "step": 4, "label": "inspect untrusted data"}
+{"ts": "2026-10-24T09:05:04.258720+00:00", "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd", "event": "run_failed", "error_type": "ModelProviderError", "error_message": "Model provider HTTP 502: Provider returned error"}
+{"ts": "2026-10-24T09:05:10.543378+00:00", "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd", "event": "cleanup_confirmed", "previous_outcome": "failed", "deleted": true}

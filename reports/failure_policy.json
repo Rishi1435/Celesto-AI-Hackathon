@@ -1,0 +1,7 @@
+{
+  "failed_step": 7,
+  "total_steps": 10,
+  "policy": "resume",
+  "rationale": "Step 6 records the verified report checksum and progress in a guest checkpoint. The deliberate step 7 failure occurs before a read-only export, so resuming the same computer and comparing the checkpoint is safe and avoids replaying generated code. A failed export with an unknown outcome is never blindly retried. The workflow records MidTaskFailure, policy_applied with resume, and Resumed before proceeding to final verification and deletion. There are no external payments, messages, or other irreversible effects to replay.",
+  "trace_path": "reports/failure_trace.jsonl"
+}

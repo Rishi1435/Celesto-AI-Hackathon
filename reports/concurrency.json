@@ -1,0 +1,185 @@
+{
+  "status": "measured_with_provider_limit",
+  "jobs": [
+    {
+      "sandbox_name": "sbx-068d1e6aa6304965a765bf36e139e1f7",
+      "started_at": "2026-10-24T07:55:07.865464+00:00",
+      "finished_at": "2026-10-24T07:57:00.470884+00:00",
+      "provider_computer_id": "cmp_da271ec7d509",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-8840805ab25143e8a5daa12b45689c03",
+      "started_at": "2026-10-24T07:57:35.788495+00:00",
+      "finished_at": "2026-10-24T07:59:32.489099+00:00",
+      "provider_computer_id": "cmp_d85b1e26f52d",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-6c69759cecd04b38ba929bf726e96829",
+      "started_at": "2026-10-24T07:59:33.284475+00:00",
+      "finished_at": "2026-10-24T08:01:55.476511+00:00",
+      "provider_computer_id": "cmp_0b0596fb6946",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-10f65d434e584932a9365f6ebf9ac351",
+      "started_at": "2026-10-24T08:01:56.319566+00:00",
+      "finished_at": "2026-10-24T08:03:19.733442+00:00",
+      "provider_computer_id": "cmp_98734684f4d7",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-5821e153a66345718cace572ed4ee5cb",
+      "started_at": "2026-10-24T08:03:20.178461+00:00",
+      "finished_at": "2026-10-24T08:04:36.560203+00:00",
+      "provider_computer_id": "cmp_8114bc5379e0",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae",
+      "started_at": "2026-10-24T08:04:36.845825+00:00",
+      "finished_at": "2026-10-24T08:05:41.091690+00:00",
+      "provider_computer_id": "cmp_207aac3d2f67",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-d0da4b6a654d4c9c9fee4d6189e83a78",
+      "started_at": "2026-10-24T08:05:41.280854+00:00",
+      "finished_at": "2026-10-24T08:07:59.136256+00:00",
+      "provider_computer_id": "cmp_5703a24f6946",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-ccb98bcba61946508ca75032f7675e65",
+      "started_at": "2026-10-24T08:07:59.355658+00:00",
+      "finished_at": "2026-10-24T08:09:14.633799+00:00",
+      "provider_computer_id": "cmp_ae7488565e6d",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-b21e86b636ad4aaea28340ae5d043ddf",
+      "started_at": "2026-10-24T08:09:15.127809+00:00",
+      "finished_at": "2026-10-24T08:10:35.246623+00:00",
+      "provider_computer_id": "cmp_0111c0a5f9ae",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-1180bc946d1c4bae9216d7030f3bef73",
+      "started_at": "2026-10-24T08:10:36.059483+00:00",
+      "finished_at": "2026-10-24T08:12:36.986104+00:00",
+      "provider_computer_id": "cmp_f11f2ec7d7ee",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-f06de8641e8249a5b227570bdbd0521b",
+      "started_at": "2026-10-24T08:55:15.051260+00:00",
+      "finished_at": "2026-10-24T08:57:30.190251+00:00",
+      "provider_computer_id": "cmp_e1106155261a",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-2a853f6d1e4f4cd28d271d2f825bbf02",
+      "started_at": "2026-10-24T08:57:41.622678+00:00",
+      "finished_at": "2026-10-24T08:57:59.870417+00:00",
+      "provider_computer_id": "cmp_7254a4d6505f",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-8b5300f158cf4e17ae21c95419fc9f1e",
+      "started_at": "2026-10-24T08:59:37.505067+00:00",
+      "finished_at": "2026-10-24T09:02:05.510590+00:00",
+      "provider_computer_id": "cmp_05c1407c44c6",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-7bf897e483504008ba7fe47a3d209d53",
+      "started_at": "2026-10-24T09:03:20.428838+00:00",
+      "finished_at": "2026-10-24T09:03:57.922020+00:00",
+      "provider_computer_id": "cmp_517c4c58ba08",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-d31cdcb53b064a549349f9c3bf077b79",
+      "started_at": "2026-10-24T09:03:58.410679+00:00",
+      "finished_at": "2026-10-24T09:04:33.394582+00:00",
+      "provider_computer_id": "cmp_1faa8b54a4b3",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-ab0267b320014f738f48cc2a3d5871bd",
+      "started_at": "2026-10-24T09:04:39.471890+00:00",
+      "finished_at": "2026-10-24T09:05:10.557987+00:00",
+      "provider_computer_id": "cmp_a6eb3a284534",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-879ddd8e1c184f409b16c7ebf34bae83",
+      "started_at": "2026-10-24T09:05:46.451338+00:00",
+      "finished_at": "2026-10-24T09:06:30.109173+00:00",
+      "provider_computer_id": "cmp_18f1d6d057a8",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-7634abd954934afda45285ab84df4777",
+      "started_at": "2026-10-24T09:08:04.126505+00:00",
+      "finished_at": "2026-10-24T09:08:29.600728+00:00",
+      "provider_computer_id": "cmp_74b7f9de345c",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-3fe74686dc704706b314e08b46436961",
+      "started_at": "2026-10-24T09:09:20.217994+00:00",
+      "finished_at": "2026-10-24T09:09:51.886761+00:00",
+      "provider_computer_id": "cmp_7014c53d8078",
+      "cleanup_confirmed": true
+    },
+    {
+      "sandbox_name": "sbx-b6d128717ca44f55b51305a4076d9abb",
+      "started_at": "2026-10-24T09:10:41.428586+00:00",
+      "finished_at": "2026-10-24T09:11:09.965490+00:00",
+      "provider_computer_id": "cmp_e00c5dc6ab6e",
+      "cleanup_confirmed": true
+    }
+  ],
+  "peak_retained_computers": 1,
+  "parallel_allocation_attempts": [
+    {
+      "sandbox_name": "sbx-243655a287764ed5bcbe72d9af81cd97",
+      "started_at": "2026-10-24T08:13:53.570885+00:00",
+      "http_status": 429,
+      "allocation_confirmed": false
+    },
+    {
+      "sandbox_name": "sbx-f635ece496ac4ef9861c1412a6bff607",
+      "started_at": "2026-10-24T08:13:53.520366+00:00",
+      "http_status": 429,
+      "allocation_confirmed": false
+    },
+    {
+      "sandbox_name": "sbx-cdb679d6ae35407fb3213016f65cbe34",
+      "started_at": "2026-10-24T08:13:53.629295+00:00",
+      "http_status": 429,
+      "allocation_confirmed": false
+    },
+    {
+      "sandbox_name": "sbx-3f380f19574c486ab15a6a7b9e5ce86a",
+      "started_at": "2026-10-24T08:13:53.756897+00:00",
+      "http_status": 429,
+      "allocation_confirmed": false
+    },
+    {
+      "sandbox_name": "sbx-18c2b65f936240f5aaa2fcbfe65fd44a",
+      "started_at": "2026-10-24T08:13:53.681946+00:00",
+      "http_status": 429,
+      "allocation_confirmed": false
+    }
+  ],
+  "breakage_notes": "Dispatched five parallel allocation attempts; 5 were refused before a computer ID was returned. A subsequent redacted provider diagnostic confirmed the trial cap of ten NEW sandboxes per hour, despite usage-overview reporting a running limit of ten. The preserved cohort contains 20 real uniquely named computers; peak overlapping ready-to-delete intervals was 1. Watched unique names, provider IDs, independent report paths, rate limits and cleanup. Five simultaneously running guest VMs are not claimed.",
+  "evidence_paths": [
+    "reports/evaluation_batch.json",
+    "reports/evidence/provider_errors.jsonl",
+    "reports/evidence/provider_limits.json",
+    "logs/commands.jsonl"
+  ]
+}

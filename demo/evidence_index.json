@@ -1,0 +1,36 @@
+{
+  "capture_method": "Actual Celesto SDK command and guest output receipts rendered as a terminal recording",
+  "idle_gaps_compressed": true,
+  "duration_s": 148.8,
+  "video_sha256": "b7fc9d75272ee8197f7fc752e06d404edf79190d9f97b42f1bf93cdc9f86ee89",
+  "run_ids": [
+    "7ea783aaa1324adfb8c0eca4b9075e1d",
+    "1f382cae67e44bab85791d556aa8f590"
+  ],
+  "sources": [
+    {
+      "path": "logs/commands.jsonl",
+      "sha256": "e8230c7f43a03ca9648a82bd6e1985048f96678fce6a668d7d889aba47235693"
+    },
+    {
+      "path": "reports/reliability.json",
+      "sha256": "f110298fd23669a0f46783d4b412c92c998e7c1f131bd546d7346832000caa4a"
+    },
+    {
+      "path": "reports/evidence/runs/7ea783aaa1324adfb8c0eca4b9075e1d.json",
+      "sha256": "aee9ea34c1d24213bbff48a66520ed75a5b0f38207b343e290b116b030bf8446"
+    },
+    {
+      "path": "reports/evidence/sbx-8840805ab25143e8a5daa12b45689c03.jsonl",
+      "sha256": "86244442ea95863db0d05fce6a62351bd5d114d78e9e6e18aa1aabbc2b0cee04"
+    },
+    {
+      "path": "reports/evidence/runs/1f382cae67e44bab85791d556aa8f590.json",
+      "sha256": "805f620109f9226427168d42e6d891324ebf1bdc8da2f23f44a8bf4a236a269d"
+    },
+    {
+      "path": "reports/evidence/sbx-f06de8641e8249a5b227570bdbd0521b.jsonl",
+      "sha256": "88f616d2b1624b5fb66f8adc6578f9d5baf940dd40bc82750d0acd2301efe20b"
+    }
+  ]
+}

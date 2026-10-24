@@ -1,0 +1,110 @@
+import csv, json, decimal, sys
+from decimal import Decimal, InvalidOperation
+
+def is_valid_amount(val):
+    try:
+        d = Decimal(val)
+    except Exception:
+        return False
+    if not d.is_finite():
+        return False
+    if d < 0:
+        return False
+    # reject fractional cents: must be integer cents (no fractional part)
+    if d != d.to_integral_value():
+        return False
+    return True
+
+def to_cents(val):
+    return int(Decimal(val) * 100)
+
+# Load sales
+sales_by_id = {}
+rejected_sales = 0
+duplicate_sales = 0
+with open('/workspace/sales.csv', newline='') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        order_id = row.get('order_id', '').strip()
+        amount_str = row.get('amount', '').strip()
+        if not order_id or not amount_str:
+            rejected_sales += 1
+            continue
+        if not is_valid_amount(amount_str):
+            rejected_sales += 1
+            continue
+        cents = to_cents(amount_str)
+        if order_id in sales_by_id:
+            duplicate_sales += 1
+            continue
+        sales_by_id[order_id] = cents
+
+# Load payments
+payments_by_id = {}
+rejected_payments = 0
+duplicate_payments = 0
+unmatched_payments = []
+with open('/workspace/payments.csv', newline='') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        payment_id = row.get('payment_id', '').strip()
+        order_id = row.get('order_id', '').strip()
+        amount_str = row.get('amount', '').strip()
+        if not payment_id or not amount_str:
+            rejected_payments += 1
+            continue
+        if not is_valid_amount(amount_str):
+            rejected_payments += 1
+            continue
+        cents = to_cents(amount_str)
+        if payment_id in payments_by_id:
+            duplicate_payments += 1
+            continue
+        payments_by_id[payment_id] = (order_id, cents)
+
+# Build rows
+rows = []
+for order_id, sales_cents in sorted(sales_by_id.items()):
+    paid_cents = 0
+    # find payments that match this order_id
+    for pid, (pid_order_id, pamt) in payments_by_id.items():
+        if pid_order_id == order_id:
+            paid_cents += pamt
+    balance_cents = sales_cents - paid_cents
+    if paid_cents == 0:
+        status = 'unpaid'
+    elif 0 < paid_cents < sales_cents:
+        status = 'partial'
+    elif paid_cents == sales_cents:
+        status = 'paid'
+    else:
+        status = 'overpaid'
+    rows.append({
+        'order_id': order_id,
+        'sales_cents': sales_cents,
+        'paid_cents': paid_cents,
+        'balance_cents': balance_cents,
+        'status': status
+    })
+
+# unmatched payments: payments where order_id not in sales_by_id
+for pid, (pid_order_id, pamt) in sorted(payments_by_id.items()):
+    if pid_order_id not in sales_by_id:
+        unmatched_payments.append({
+            'payment_id': pid,
+            'order_id': pid_order_id,
+            'amount_cents': pamt
+        })
+
+output = {
+    'currency': 'INR',
+    'rows': rows,
+    'rejected_sales': rejected_sales,
+    'rejected_payments': rejected_payments,
+    'duplicate_sales': duplicate_sales,
+    'duplicate_payments': duplicate_payments,
+    'unmatched_payments': unmatched_payments
+}
+
+with open('/workspace/reconciled.json', 'w') as f:
+    json.dump(output, f, indent=2)

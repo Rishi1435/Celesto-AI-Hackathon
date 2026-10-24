@@ -1,0 +1,28 @@
+{
+  "cleanup_on_success": true,
+  "cleanup_on_failure": true,
+  "cleanup_on_interrupt": true,
+  "sandbox_names": [
+    "sbx-5821e153a66345718cace572ed4ee5cb",
+    "sbx-ab0267b320014f738f48cc2a3d5871bd",
+    "sbx-f06de8641e8249a5b227570bdbd0521b",
+    "sbx-b6d128717ca44f55b51305a4076d9abb",
+    "sbx-d0da4b6a654d4c9c9fee4d6189e83a78",
+    "sbx-7bf897e483504008ba7fe47a3d209d53",
+    "sbx-2a853f6d1e4f4cd28d271d2f825bbf02",
+    "sbx-879ddd8e1c184f409b16c7ebf34bae83",
+    "sbx-3fe74686dc704706b314e08b46436961",
+    "sbx-8840805ab25143e8a5daa12b45689c03",
+    "sbx-1180bc946d1c4bae9216d7030f3bef73",
+    "sbx-d31cdcb53b064a549349f9c3bf077b79",
+    "sbx-ccb98bcba61946508ca75032f7675e65",
+    "sbx-8b5300f158cf4e17ae21c95419fc9f1e",
+    "sbx-10f65d434e584932a9365f6ebf9ac351",
+    "sbx-6c69759cecd04b38ba929bf726e96829",
+    "sbx-068d1e6aa6304965a765bf36e139e1f7",
+    "sbx-c92e2421e50248ddbfe442535961c8ae",
+    "sbx-7634abd954934afda45285ab84df4777",
+    "sbx-b21e86b636ad4aaea28340ae5d043ddf"
+  ],
+  "status": "measured"
+}

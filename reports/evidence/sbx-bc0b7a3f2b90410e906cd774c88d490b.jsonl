@@ -1,0 +1,3 @@
+{"ts": "2026-10-24T09:06:30.600504+00:00", "sandbox_name": "sbx-bc0b7a3f2b90410e906cd774c88d490b", "event": "step_started", "step": 1, "label": "create fresh computer"}
+{"ts": "2026-10-24T09:06:33.053193+00:00", "sandbox_name": "sbx-bc0b7a3f2b90410e906cd774c88d490b", "event": "run_failed", "error_type": "CloudAPIError", "error_message": "Cloud API returned HTTP 429. The server is limiting requests; inspect your cloud account limits before retrying, or ask Celesto support which limit applies. Request ID: d222ebac2078822e6d7ec12589546f37."}
+{"ts": "2026-10-24T09:06:33.073787+00:00", "sandbox_name": "sbx-bc0b7a3f2b90410e906cd774c88d490b", "event": "no_allocation_to_delete", "previous_outcome": "failed", "deleted": false}

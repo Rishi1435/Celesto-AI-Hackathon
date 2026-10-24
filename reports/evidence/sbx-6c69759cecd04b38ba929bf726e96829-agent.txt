@@ -1,0 +1,139 @@
+import csv, json, decimal, sys
+from decimal import Decimal, InvalidOperation
+
+def is_valid_amount(val):
+    try:
+        d = Decimal(val)
+    except Exception:
+        return False
+    if not d.is_finite():
+        return False
+    if d.is_signed():
+        return False
+    # Check for fractional cents: amount must be integer cents (no fractional part)
+    # Convert to paise: amount * 100 must be integer
+    paise = d * Decimal('100')
+    if not paise.as_tuple().exponent <= 0:
+        return False
+    if paise != paise.to_integral_value():
+        return False
+    return True
+
+# Load sales.csv
+sales_path = '/workspace/sales.csv'
+sales_rows = []
+with open(sales_path, newline='') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        sales_rows.append(row)
+
+# Load payments.csv
+payments_path = '/workspace/payments.csv'
+payments_rows = []
+with open(payments_path, newline='') as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        payments_rows.append(row)
+
+# Process sales
+sales_accepted = {}
+sales_rejected = 0
+sales_duplicate = 0
+seen_sales_ids = set()
+# mapping from order_id to cents for accepted sales
+sales_map = {}
+for row in sales_rows:
+    # Check required ids present
+    if 'order_id' not in row or not row['order_id']:
+        sales_rejected += 1
+        continue
+    # Validate amount
+    if 'amount' not in row or not is_valid_amount(row['amount']):
+        sales_rejected += 1
+        continue
+    # Convert amount to integer cents
+    d = Decimal(row['amount'])
+    cents = int((d * Decimal('100')).to_integral_value())
+    # Deduplicate: first valid row per order_id wins
+    oid = row['order_id']
+    if oid in seen_sales_ids:
+        sales_duplicate += 1
+        continue
+    seen_sales_ids.add(oid)
+    sales_map[oid] = cents
+
+# Process payments
+payments_accepted = {}
+payments_rejected = 0
+payments_duplicate = 0
+seen_payments_ids = set()
+# mapping from payment_id to (order_id, cents) for accepted payments
+payments_map = {}
+for row in payments_rows:
+    # Check required ids present
+    if 'payment_id' not in row or not row['payment_id'] or 'order_id' not in row or not row['order_id']:
+        payments_rejected += 1
+        continue
+    # Validate amount
+    if 'amount' not in row or not is_valid_amount(row['amount']):
+        payments_rejected += 1
+        continue
+    # Convert amount to integer cents
+    d = Decimal(row['amount'])
+    cents = int((d * Decimal('100')).to_integral_value())
+    # Deduplicate: first valid row per payment_id wins
+    pid = row['payment_id']
+    if pid in seen_payments_ids:
+        payments_duplicate += 1
+        continue
+    seen_payments_ids.add(pid)
+    payments_map[pid] = (row['order_id'], cents)
+
+# Build unmatched_payments: payments with valid amount and id but order_id not in sales_map
+unmatched_payments = []
+for pid, (oid, cents) in payments_map.items():
+    if oid not in sales_map:
+        unmatched_payments.append({'payment_id': pid, 'order_id': oid, 'amount_cents': cents})
+
+# Sort unmatched_payments by payment_id
+unmatched_payments.sort(key=lambda x: x['payment_id'])
+
+# Build reconciled rows
+rows = []
+for order_id, sales_cents in sorted(sales_map.items()):
+    paid_cents = 0
+    # Sum payments that match this order_id (only from payments_map)
+    for pid, (pid_oid, pcents) in payments_map.items():
+        if pid_oid == order_id:
+            paid_cents += pcents
+    balance_cents = sales_cents - paid_cents
+    if paid_cents == 0:
+        status = 'unpaid'
+    elif 0 < paid_cents < sales_cents:
+        status = 'partial'
+    elif paid_cents == sales_cents:
+        status = 'paid'
+    else:
+        status = 'overpaid'
+    rows.append({
+        'order_id': order_id,
+        'sales_cents': sales_cents,
+        'paid_cents': paid_cents,
+        'balance_cents': balance_cents,
+        'status': status
+    })
+
+output = {
+    'currency': 'INR',
+    'rows': rows,
+    'rejected_sales': sales_rejected,
+    'rejected_payments': payments_rejected,
+    'duplicate_sales': sales_duplicate,
+    'duplicate_payments': payments_duplicate,
+    'unmatched_payments': unmatched_payments
+}
+
+with open('/workspace/reconciled.json', 'w') as f:
+    json.dump(output, f, indent=2)
+
+print('Done')

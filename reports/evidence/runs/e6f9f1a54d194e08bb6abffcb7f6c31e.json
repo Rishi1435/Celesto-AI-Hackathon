@@ -1,0 +1,125 @@
+{
+  "run_id": "e6f9f1a54d194e08bb6abffcb7f6c31e",
+  "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae",
+  "state": "deleted",
+  "execution_target": "celesto_sandbox",
+  "details": {
+    "started_at": "2026-10-24T08:04:36.845825+00:00",
+    "scenario": "normal",
+    "seed": 5,
+    "outcome": "failed",
+    "events": [
+      {
+        "ts": "2026-10-24T08:04:36.845898+00:00",
+        "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae",
+        "event": "step_started",
+        "step": 1,
+        "label": "create fresh computer"
+      },
+      {
+        "ts": "2026-10-24T08:04:48.744835+00:00",
+        "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae",
+        "event": "provider_attached",
+        "provider_computer_id": "cmp_207aac3d2f67",
+        "sandbox_name_kind": "unique control-plane alias"
+      },
+      {
+        "ts": "2026-10-24T08:04:48.807044+00:00",
+        "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae",
+        "event": "state_changed",
+        "state": "created"
+      },
+      {
+        "ts": "2026-10-24T08:04:48.823119+00:00",
+        "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae",
+        "event": "step_completed",
+        "step": 1
+      },
+      {
+        "ts": "2026-10-24T08:04:48.865763+00:00",
+        "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae",
+        "event": "state_changed",
+        "state": "ready"
+      },
+      {
+        "ts": "2026-10-24T08:04:48.885288+00:00",
+        "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae",
+        "event": "step_completed",
+        "step": 2,
+        "boot_to_ready_s": 11.882082402000378
+      },
+      {
+        "ts": "2026-10-24T08:04:48.928465+00:00",
+        "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae",
+        "event": "state_changed",
+        "state": "running"
+      },
+      {
+        "ts": "2026-10-24T08:04:51.947480+00:00",
+        "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae",
+        "event": "step_completed",
+        "step": 3,
+        "label": "upload synthetic exports"
+      },
+      {
+        "ts": "2026-10-24T08:04:55.386127+00:00",
+        "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae",
+        "event": "step_completed",
+        "step": 4,
+        "label": "inspect untrusted data"
+      },
+      {
+        "ts": "2026-10-24T08:05:35.788040+00:00",
+        "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae",
+        "event": "run_failed",
+        "error_type": "HTTPStatusError",
+        "error_message": "Client error '400 Bad Request' for url '[endpoint]\nFor more information check: [endpoint]"
+      },
+      {
+        "ts": "2026-10-24T08:05:39.633416+00:00",
+        "sandbox_name": "sbx-c92e2421e50248ddbfe442535961c8ae",
+        "event": "cleanup_confirmed",
+        "previous_outcome": "failed",
+        "deleted": true
+      }
+    ],
+    "configuration": {
+      "provider": "cloud",
+      "template": "coding-agent",
+      "llm_model": "cohere/north-mini-code:free",
+      "llm_free_only": true,
+      "max_model_turns": 5,
+      "command_timeout_s": 60,
+      "sandbox_hourly_usd": 0.015,
+      "llm_input_usd_per_million": 0.0,
+      "llm_output_usd_per_million": 0.0
+    },
+    "ready_at": "2026-10-24T08:04:48.744773+00:00",
+    "provider_computer_id": "cmp_207aac3d2f67",
+    "error_type": "HTTPStatusError",
+    "error_message": "Client error '400 Bad Request' for url '[endpoint]\nFor more information check: [endpoint]",
+    "provider_http_status": null,
+    "provider_side_effects": null,
+    "finished_at": "2026-10-24T08:05:41.091690+00:00",
+    "deleted_at": "2026-10-24T08:05:39.633380+00:00",
+    "wall_clock_s": 64.25161092399958,
+    "boot_to_ready_s": 11.882082402000378,
+    "fresh": true,
+    "allocation_confirmed": true,
+    "allocation_rejected": false,
+    "cleanup_not_required": false,
+    "sandbox_created": true,
+    "cleanup_confirmed": true,
+    "success": false,
+    "sandbox_cost_usd_estimate": 0.00026771504551666495,
+    "llm_cost_usd_estimate": 0.0,
+    "input_tokens": 817,
+    "output_tokens": 3,
+    "provider_reported_llm_cost_usd": 0.0,
+    "models_used": [
+      "cohere/north-mini-code:free"
+    ],
+    "cost_basis": "estimated elapsed time \u00d7 configured sandbox rate plus token rates; not an invoice",
+    "cost_usd": 0.00026771504551666495
+  }
+}

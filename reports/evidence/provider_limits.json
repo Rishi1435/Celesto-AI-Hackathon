@@ -1,0 +1,9 @@
+{
+  "state": "trial",
+  "available": true,
+  "running_count": 1,
+  "running_limit": 10,
+  "retained_count": 1,
+  "checked_at": "2026-10-24T08:06:44.372637+00:00",
+  "http_status": 200
+}
